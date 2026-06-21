@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 发现你的故事</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #faf8f5;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+            color: #2a2a2a;
+            line-height: 1.7;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2.5rem 1.2rem;
+        }
+
+        .page {
+            max-width: 700px;
+            width: 100%;
+        }
+
+        /* hero */
+        .hero {
+            margin-bottom: 3.5rem;
+        }
+
+        .hero pre {
+            font-family: inherit;
+            font-size: 1.8rem;
+            font-weight: 350;
+            letter-spacing: 0.02em;
+            color: #3d3d3d;
+            border-left: 2px solid #d4c9b8;
+            padding-left: 1.5rem;
+            line-height: 1.4;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        .hero .sub {
+            margin-top: 1.2rem;
+            color: #707070;
+            font-size: 1rem;
+            border-left: 1px solid #e1d9ce;
+            padding-left: 1.5rem;
+        }
+
+        /* 正文段落 */
+        .intro p {
+            margin: 1.6rem 0;
+            font-size: 1.05rem;
+            color: #3a3a3a;
+        }
+
+        .intro p:first-of-type {
+            margin-top: 0;
+        }
+
+        .intro a {
+            color: #7b5f44;
+            text-decoration: none;
+            border-bottom: 1px solid #d6c8b8;
+            transition: border-color 0.2s, color 0.2s;
+            font-weight: 450;
+        }
+
+        .intro a:hover {
+            border-bottom-color: #7b5f44;
+            color: #4f3b2a;
+        }
+
+        /* 特点列表 — 温和卡片 */
+        .features {
+            margin: 3rem 0 2.8rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+        }
+
+        .feature-item {
+            flex: 1 1 180px;
+            background: #ffffffec;
+            border: 1px solid #ede7df;
+            border-radius: 16px;
+            padding: 1.35rem 1.1rem;
+            transition: box-shadow 0.15s;
+        }
+
+        .feature-item:hover {
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02), 0 1px 4px rgba(0, 0, 0, 0.03);
+        }
+
+        .feature-item h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+            color: #2f2f2f;
+            letter-spacing: 0.3px;
+        }
+
+        .feature-item p {
+            font-size: 0.9rem;
+            color: #5c5c5c;
+            margin: 0.2rem 0 0 0;
+            line-height: 1.5;
+        }
+
+        /* 温和结尾 / 引导 */
+        .closing {
+            margin: 2rem 0 3.5rem 0;
+            border-top: 1px solid #e8e0d6;
+            padding-top: 2rem;
+            font-size: 1rem;
+        }
+
+        .closing p {
+            margin: 0.65rem 0;
+        }
+
+        .closing .soft-cta {
+            background: #f3ede7;
+            border-radius: 40px;
+            padding: 0.75rem 1.4rem;
+            display: inline-block;
+            margin-top: 0.8rem;
+            font-size: 0.95rem;
+            border: 1px solid #ddd3c6;
+            color: #2f2f2f;
+        }
+
+        .closing .soft-cta a {
+            color: #5d4636;
+            text-decoration: none;
+            border-bottom: 0;
+            font-weight: 480;
+        }
+
+        .closing .soft-cta a:hover {
+            opacity: 0.75;
+        }
+
+        /* FAQ 摘要 —— 极简 */
+        .faq-note {
+            margin: 2.2rem 0 1rem 0;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid #eee7df;
+        }
+
+        .faq-note details {
+            margin: 0.8rem 0;
+        }
+
+        .faq-note summary {
+            font-weight: 450;
+            cursor: pointer;
+            color: #3d3d3d;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .faq-note summary::before {
+            content: "↪";
+            font-size: 0.9rem;
+            opacity: 0.5;
+            margin-right: 0.2rem;
+        }
+
+        .faq-note details[open] summary::before {
+            content: "↴";
+        }
+
+        .faq-note details p {
+            margin: 0.5rem 0 1rem 1.6rem;
+            font-size: 0.95rem;
+            color: #5b5b5b;
+        }
+
+        /* 响应式 */
+        @media (max-width: 480px) {
+            body {
+                padding: 1.8rem 1rem;
+            }
+
+            .hero pre {
+                font-size: 1.45rem;
+                padding-left: 1rem;
+            }
+
+            .feature-item {
+                flex: 1 1 100%;
+                padding: 1rem 0.9rem;
+            }
+
+            .closing .soft-cta {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- hero 故事开场 -->
+    <div class="hero">
+        <pre>你知道吗？
+每个游戏背后，
+都有一段属于你自己的旅程。</pre>
+        <div class="sub">—— 而这里，是旅程开始的地方。</div>
+    </div>
+
+    <!-- 承接段落：从用户想快速识别用途的角度 -->
+    <div class="intro">
+        <p>
+            打开一个网站，几秒内你就想知道：这里能做什么？是找游戏、看资讯、还是与同好交流？<br>
+            <a href="https://cn-portal-i-game.com.cn">爱游戏</a> 给出的答案很简单——它是一扇门，通向游戏世界里那些你最在意的角落。
+        </p>
+        <p>
+            没有复杂的入口迷宫，也没有铺天盖地的弹窗。这个站点用一种克制的节奏，把游戏内容、社区氛围和实用工具收拢在一起。你不需要花时间适应，只需要顺着自己的兴趣走。
+        </p>
+    </div>
+
+    <!-- 特点列表：温和呈现 -->
+    <div class="features">
+        <div class="feature-item">
+            <h3>简洁的导航</h3>
+            <p>分类清晰，不堆砌链接。从热门推荐到小众宝藏，几步就能触达。</p>
+        </div>
+        <div class="feature-item">
+            <h3>真实的氛围</h3>
+            <p>没有浮夸的标语，只有玩家们自然分享的体验和心得。</p>
+        </div>
+        <div class="feature-item">
+            <h3>轻量体验</h3>
+            <p>页面加载快，信息密度适中。你想看的，不用等太久。</p>
+        </div>
+    </div>
+
+    <!-- 场景段落：进一步解释用途 -->
+    <div class="intro">
+        <p>
+            如果你只是想快速确认某款游戏的评价，或是想找个安静的讨论区翻一翻老帖子，甚至只是随手看看最近有什么值得期待的新作品——这里都能满足。它不追求成为最大的平台，而是希望成为你用得最顺手的那个。
+        </p>
+    </div>
+
+    <!-- FAQ 摘要（小段） -->
+    <div class="faq-note">
+        <details>
+            <summary>爱游戏 适合什么样的玩家？</summary>
+            <p>无论是偶尔打开游戏的休闲派，还是喜欢深入研究每一处细节的硬核玩家，都能在这里找到适合自己的角落。内容偏向中文社区，交流氛围友好。</p>
+        </details>
+        <details>
+            <summary>需要注册或付费吗？</summary>
+            <p>大部分内容可以直接浏览。部分社区互动功能可能需注册账号，目前没有任何强制付费项目。</p>
+        </details>
+    </div>
+
+    <!-- 温和结尾 -->
+    <div class="closing">
+        <p>所以，如果你正在寻找一个不吵不闹、能踏实待一会儿的游戏站点，不妨点开上面那个链接。</p>
+        <p>或许你会发现，<a href="https://cn-portal-i-game.com.cn">爱游戏</a> 里正好有你想要的那份安静与丰富。</p>
+        <div class="soft-cta">
+            <span>→ 去看看 </span><a href="https://cn-portal-i-game.com.cn">爱游戏</a>
+        </div>
+        <p style="margin-top:1.2rem; font-size:0.9rem; color:#7e7e7e;">—— 祝你好游戏，好心情。</p>
+    </div>
+
+</div>
+</body>
+</html>
